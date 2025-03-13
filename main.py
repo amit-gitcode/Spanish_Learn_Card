@@ -7,7 +7,7 @@ from io import BytesIO
 import base64
 
 # Set page config
-st.set_page_config(page_title="Shagun Spanish Flash Card", page_icon="📚", layout="centered")
+st.set_page_config(page_title="Spanish Flash Card", page_icon="📚", layout="centered")
 
 # Custom CSS
 st.markdown(
@@ -31,13 +31,13 @@ st.markdown(
     }
     .title {
         font-family: Arial, sans-serif;
-        font-size: 48px !important;
+        font-size: 20px !important;
         font-style: italic;
         margin-bottom: 30px !important;
     }
     .word {
         font-family: Arial, sans-serif;
-        font-size: 80px !important;
+        font-size: 40px !important;
         font-weight: bold;
     }
     .button-container {
