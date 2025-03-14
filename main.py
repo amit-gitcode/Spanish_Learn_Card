@@ -47,20 +47,29 @@ st.markdown(
         margin-top: 40px;
     }
     .stButton>button {
-    background-color: transparent !important;
-    border: 2px solid #4CAF50 !important;
-    color: #4CAF50 !important;
+    background-color: #DD96B1 !important; /* Rose background */
+    border: none !important;
+    color: black !important; /* Black text */
     font-size: 18px !important;
+    font-weight: bold !important; /* Bold text */
     padding: 15px 10px !important;
     margin: 0 10px !important;
     width: 100% !important;
     height: auto !important;
-    transition: all 0.3s ease !important;
-}
-.stButton>button:hover {
-    background-color: #4CAF50 !important;
-    color: white !important;
-}
+    transition: all 0.1s ease !important;
+    box-shadow: 0 5px #666 !important; /* Creates a 3D effect */
+    position: relative !important;
+    top: 0 !important;
+    }  
+    .stButton>button:hover {
+        background-color: #707070 !important; /* Slightly darker gray on hover */
+    }
+    .stButton>button:active {
+        background-color: #606060 !important; /* Even darker when pressed */
+        box-shadow: 0 2px #666 !important;
+        top: 3px !important; /* Move the button down slightly when pressed */
+    }
+
 
     </style>
     """,
