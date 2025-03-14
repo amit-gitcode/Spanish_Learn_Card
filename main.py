@@ -47,12 +47,21 @@ st.markdown(
         margin-top: 40px;
     }
     .stButton>button {
-        background-color: transparent !important;
-        border: none !important;
-        font-size: 200px !important;
-        padding: 10px 20px !important;
-        margin: 0 10px !important;
-    }
+    background-color: transparent !important;
+    border: 2px solid #4CAF50 !important;
+    color: #4CAF50 !important;
+    font-size: 18px !important;
+    padding: 15px 10px !important;
+    margin: 0 10px !important;
+    width: 100% !important;
+    height: auto !important;
+    transition: all 0.3s ease !important;
+}
+.stButton>button:hover {
+    background-color: #4CAF50 !important;
+    color: white !important;
+}
+
     </style>
     """,
     unsafe_allow_html=True
@@ -106,7 +115,7 @@ def is_known():
 
 
 # UI Components
-st.title("Shagun Spanish Flash Card")
+st.title("Spanish Flash Card")
 
 # Load images
 card_front = Image.open("./images/card_front.png")
@@ -141,18 +150,17 @@ else:
     st.rerun()
 
 # Buttons
+# Buttons
 st.markdown('<div class="button-container">', unsafe_allow_html=True)
-col1, col2, col3 = st.columns([1, 2, 1])
+col1, col2 = st.columns(2)
+with col1:
+    if st.button("I don't know the word", key="wrong", use_container_width=True):
+        learn_word()
+        st.rerun()
 with col2:
-    cols = st.columns(2)
-    with cols[0]:
-        if st.button("❌", key="wrong"):
-            learn_word()
-            st.rerun()
-    with cols[1]:
-        if st.button("✅", key="right"):
-            is_known()
-            st.rerun()
+    if st.button("I know the word", key="right", use_container_width=True):
+        is_known()
+        st.rerun()
 st.markdown('</div>', unsafe_allow_html=True)
 
 # Auto refresh
